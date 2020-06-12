@@ -200,7 +200,7 @@ const artists = [
       "paintings": 328
     }
 ]
-
+console.log(artists);
 // 🖌🖼 M V P 🖼🖌 //
 
 /* Task 1: Practice accessing data above by console.log-ing following items:
@@ -212,7 +212,9 @@ console.log(artists[0]);
 console.log(artists[2].bio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+artists[8].name ="Vincent Van Gogh"
 
+console.log(artists[8]);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -231,14 +233,16 @@ console.log(getArtistByIndex(artists, 5));
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who lived in the 20th century (1900-2000) */
 
-var range = artists.filter(function get20s (time){
-  return time.years > '1900';
-  
-  
-  
-});
-
-console.log(range);
+function get20s(array){
+  let newarr = [];
+ for(let i = 0; i < array.length; i++){
+   if(array[i].years >= 1900 && array[i].years <= 2000){
+  newarr.push(array[i].years);
+}
+}
+return newarr;
+}
+console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -251,15 +255,17 @@ console.log(range);
  * Note that sucessfully invoking this function multiple times without refreshing your browser will 
  * continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-// function removeArtist(artists, 7) {
-    
-  // }
+function removeArtist(arr, index) {
+  let remove = [];
+  for (let i = arr.index.length -1; i >= 0; i--) {
+    if (arr.index[i].seconds < 0) {
+        arr.index.splice(i, 1);
+    }
+  }
+    return remove;
+   }
   
-  
-
-
-
-
+//  console.log(removeArtist(5, 1));
 /* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
 
 For example, you could add the following information: 
@@ -271,12 +277,17 @@ nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) 
 
 At the end, this function should console.log() the new array with information added"*/
+// artists.push({"id": 21
+//   "name": "Ben Bush", 
+//   "years": 2000 - 2020,
+//   "genre": "Web Design", 
+//   "nationality": "Other"
+//   "bio":  "Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+// })
+ function addArtist(arr){
+  " I DONT KNOW WHY A FOR LOOP WOULD GO HERE, I KNOW IT REQUIRES A .PUSH"
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
-  }
+ }
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -293,14 +304,6 @@ return hustle.paintings > 100;
 
 console.log(soMuchArt);
 
-// var range = artists.filter(function get20s (time){
-//   return time.years > '1900';
-  
-  
-  
-// });
-
-// console.log(range);
 
 
 
@@ -328,20 +331,20 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
+// function getHTML(/* Code here */){
 
-    /* Code here */
+//     /* Code here */
 
-  }
+//   }
 
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
-
-    /* Code here */
-
-  }
-
-
+function randomize(arr){
+  for (i = 0; i < arguments.length; i++){
+    var randomArray = arguments[i][Math.floor(Math.random()*arguments.length)];
+    console.log(randomArray);
+} 
+}
+randomize(artists);
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
